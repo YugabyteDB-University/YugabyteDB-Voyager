@@ -1,0 +1,49 @@
+                                                                                                                                                                                                                                                        UNREGISTERED                                                                                                                                           allhands_demo_notes
+
+    allhands demo_
+        VM1 - (us-east1-b): ssh     ~/.ssh/gcp-dev-vm nikhil@node1
+        VM2 (us-east1-b): ssh -i ~/. ssh/gcp-dev-vm nikhil@node2
+                      h
+        -/bin/yugabyted start --cloud location gcp.us-east.us-east1-b -fault tolerance zone
+       •/bin/yugabyted start --cloud_location gcp.us-east.us-east1-b -fault_tolerance zone -join 10.151.0.97
+
+
+
+        VM3 (us-east1-c): ssh -i ~/. ssh/gcp-dev-vm nikhil@node3
+        VM4 (us-east1-c): ssh -i ~/.ssh/gcp-dev-vm I .khil@node4
+
+       _-/bin/yugabyted start --cloud location gcp.us-east.us-east1-c -fault tolerance zone -join 10.151.0.97
+       •/bin/yugabyted start --cloud_location gcp.us-east.us-east1-c _-fault_tolerance zone -join 10.151.0.97
+
+
+                                                                                                                                                                                                                                              k
+        VM5 (us-east1-d): ssh -i ~/.ssh/gcp-dev-vm nikhil@node5
+        VM6 (us-east1-d): ssh -i ~/.ssh/gcp-dev-vm nikhil@node6
+
+       •/bin/yugabyted start -cloud location gcp.us-east.us-east1-d -fault_tolerance zone -join 10.151.0.97
+       • /bin/yugabyted start -cloud location gcp.us-east.us-east1-d - -fault tolerance zone -join 10.151.0.97
+
+     •/bin/yugabyted configure data_placement -fault tolerance=zone
+
+
+        VM7 (us-east1-d): ssh -i ~/. ssh/gcp-dev-vm nikhil@node7
+
+        RR
+
+        •/bin/yugabyted start -cloud location gcp.us-east.us-east1-d -fault_tolerance zone --join 10.151.0.97
+
+
+
+
+         -follower_unavailable_considered_failed_sec
+        --leader_lease_duration_ ms
+
+
+      http://10.151.0.97:7000/api/v1/health-check
+
+     http://10.151.0.32:15433/
+      http://10.151.0.102:15433
+  43
+  44
+45 ENDPOINTS="10.151.0.97:9042.10.151.0.102:9042.10.151.0.137:9042.10.151.0.32:9042.10.151.0.81:9042.10.151.0.86:9042"
+24 lines, 1038 characters selected                                                                                                                                                                                                                              Plain Text

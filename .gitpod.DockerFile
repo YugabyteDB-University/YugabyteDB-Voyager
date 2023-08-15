@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-mysql
 
 ARG YB_VERSION=2.17.3.0
 ARG YB_PATH=/home/gitpod/yugabyte
