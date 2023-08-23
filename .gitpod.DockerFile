@@ -1,22 +1,31 @@
 FROM gitpod/workspace-mysql
 
-ARG YB_VERSION=2.17.3.0
+ARG YB_VERSION=2.19.0.0
+ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.0.0/yugabyte-2.19.0.0-b190-linux-x86_64.tar.gz
 ARG YB_PATH=/home/gitpod/yugabyte
 ARG YB_PATH_DATA=/home/gitpod/yugabyte-data
-ARG ROLE=gitpod
 
+ARG ROLE=gitpod
 USER root
 RUN mkdir -p $YB_PATH 
 RUN chown -R $ROLE:$ROLE $YB_PATH 
 
 USER $ROLE
-RUN curl -sSLo ./yugabyte.tar.gz https://downloads.yugabyte.com/releases/2.17.3.0/yugabyte-2.17.3.0-b152-linux-x86_64.tar.gz \
+RUN curl -sSLo ./yugabyte.tar.gz $YB_DOWNLOAD_URL  \
   && tar -xvf yugabyte.tar.gz -C $YB_PATH --strip-components=1 \
   && chmod +x $YB_PATH/bin/* \
   && rm ./yugabyte.tar.gz
 RUN $YB_PATH/bin/post_install.sh
 RUN echo "\n# yugabytedb executable path" >> ~/.bashrc
 RUN echo "export PATH=\$PATH:$YB_PATH/bin/" >> ~/.bashrc
+
+USER $ROLE
+RUN wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
+RUN sudo apt-get install ./yb-apt-repo_1.0.0_all.deb
+RUN sudo apt-get clean
+RUN sudo apt-get update
+RUN sudo apt-get install -y yb-voyager
+
 
 ENV MYSQL_PORT=3306
 ENV YSQL_PORT=5433
