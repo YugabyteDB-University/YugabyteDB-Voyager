@@ -4,26 +4,29 @@ lsb_release -a
 https://dev.mysql.com/doc/sakila/en/sakila-installation.html
 
 
+ mysql -h 0 -u root < /workspace/YugabyteDB-Voyager/sakila-db/sakila-schema.sql
+ mysql -h 0 -u root < /workspace/YugabyteDB-Voyager/sakila-db/sakila-data.sql
 
-mysql >
 SOURCE /workspace/YugabyteDB-Voyager/sakila-db/sakila-schema.sql;
 SOURCE /workspace/YugabyteDB-Voyager/sakila-db/sakila-data.sql;
 
 show databases;
 
+connection for 
 use sakila;
+
 show tables;
+
 select * from actor;
+
 
 select @@version;
 
 SHOW PROCEDURE STATUS WHERE db = 'sakila'; 
-
 SHOW FUNCTION STATUS WHERE db = 'sakila'; 
-
 SHOW FULL TABLES WHERE Table_Type LIKE 'VIEW';
-
 SHOW TRIGGERS;
+
 
 
 --- 
