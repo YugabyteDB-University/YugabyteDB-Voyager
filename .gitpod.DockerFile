@@ -19,12 +19,6 @@ RUN $YB_PATH/bin/post_install.sh
 RUN echo "\n# yugabytedb executable path" >> ~/.bashrc
 RUN echo "export PATH=\$PATH:$YB_PATH/bin/" >> ~/.bashrc
 
-USER $ROLE
-RUN wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
-RUN sudo apt-get install ./yb-apt-repo_1.0.0_all.deb
-RUN sudo apt-get clean
-RUN sudo apt-get update
-RUN sudo apt-get install -y yb-voyager
 
 ENV MYSQL_PORT=3306
 ENV YSQL_PORT=5433
