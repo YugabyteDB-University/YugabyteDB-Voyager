@@ -1,58 +1,104 @@
 USER $ROLE
 RUN wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
-RUN sudo apt-get install ./yb-apt-repo_1.0.0_all.deb
+RUN sudo apt install ./yb-apt-repo_1.0.0_all.deb
+sudo apt install debezium=2.2.0-1.4.0
+sudo apt yb-apt-repo
 RUN sudo apt-get clean
 RUN sudo apt-get update
 RUN sudo apt-get install -y yb-voyager
 
-
-
-
-Depends: oracle-instantclient-tools (= 21.5.0.0.0-1) but it is not installable
-
-Depends: oracle-instantclient-tools (= 21.5.0.0.0-1) but 21.11.0.0.0-2 is to be installed
-
-https://gist.github.com/bmaupin/1d376476a2b6548889b4dd95663ede58
-
-https://download.oracle.com/otn_software/linux/instantclient/2111000/oracle-instantclient-tools-21.11.0.0.0-1.x86_64.rpm
-
-wget https://download.oracle.com/otn_software/linux/instantclient/215000/oracle-instantclient-tools-21.5.0.0.0-1.x86_64.rpm
-
-sudo alien -i oracle-instantclient-tools-21.5.0.0.0-1.x86_64.rpm
-
-oracle-instantclient-tools
-
-    sudo alien -i oracle-instantclient19.12-basiclite-19.12.0.0.0-1.x86_64.rpm
-    sudo alien -i oracle-instantclient-basic-21.11.0.0.0-1.x86_64.rpm
-
-
-sudo sh -c  'echo /usr/lib/oracle/21/client64/lib/ > /etc/ld.so.conf.d/oracle.conf'
-
-https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/
-
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
-
-
 ----
+# download files
 cd /tmp
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/yb-voyager_1.4.0-0_amd64.deb
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
+sudo apt install --simulate ./yb-apt-repo_1.0.0_all.deb
+sudo apt install --simulate yb-apt-repo
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-basic_21.5.0.0.0-1_amd64.deb
+sudo apt install ./yb-apt-repo_1.0.0_all.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-devel_21.5.0.0.0-1_amd64.deb
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbi-perl_1.640-1ubuntu0.3_amd64.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-jdbc_21.5.0.0.0-1_amd64.deb
+apt install --simulate ./libdbi-perl_1.640-1ubuntu0.3_amd64.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-sqlplus_21.5.0.0.0-1_amd64.deb
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbd-mysql-perl_4.041-2_amd64.deb
+
+apt install --simulate ./libdbd-mysql-perl_4.041-2_amd64.deb
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libcompress-raw-zlib-perl_2.101-1_amd64.deb
+
+apt install --simulate ./libcompress-raw-zlib-perl_2.101-1_amd64.deb
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbd-oracle-perl_1.80-3_amd64.deb
+
+apt install --simulate ./libdbd-oracle-perl_1.80-3_amd64.deb
 
 wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/debezium_2.2.0-1.4.0_all.deb
 
+apt install --simulate ./debezium_2.2.0-1.4.0_all.deb
+
 wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/ora2pg_23.2-yb.2_all.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbi-perl_1.640-1ubuntu0.3_amd64.deb
-sudo apt-get install ./libdbi-perl_1.640-1ubuntu0.3_amd64.deb
+apt install --simulate ./ora2pg_23.2-yb.2_all.deb
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-basic_21.5.0.0.0-1_amd64.deb
+
+apt install --simulate ./oracle-instantclient-basic_21.5.0.0.0-1_amd64.deb
+
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-devel_21.5.0.0.0-1_amd64.deb
+
+apt install --simulate ./oracle-instantclient-devel_21.5.0.0.0-1_amd64.deb
+
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-jdbc_21.5.0.0.0-1_amd64.deb
+
+apt install --simulate ./oracle-instantclient-jdbc_21.5.0.0.0-1_amd64.deb
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-sqlplus_21.5.0.0.0-1_amd64.deb
+
+apt install --simulate ./oracle-instantclient-sqlplus_21.5.0.0.0-1_amd64.deb
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/yb-voyager_1.4.0-0_amd64.deb
+
+apt install --simulate ./yb-voyager_1.4.0-0_amd64.deb
+
+wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/yb-voyager_1.5.0-rc1_amd64.deb
+apt install --simulate ./yb-voyager_1.5.0-rc1_amd64.deb
+
+---
+The following packages have unmet dependencies:
+ nginx-module-brotli : Depends: nginx (= 1.17.3-2-ppa7~bionic)
+E: Unable to correct problems, you have held broken packages.
+
+X=nginx-module-brotli
+Y=nginx
+Z=1.17.3-2-ppa7~bionic
+
+apt-cache policy nginx
+
+sudo apt update
+sudo apt install <Y>=<Z>
+----
+The following packages have unmet dependencies:
+ yb-voyager : Depends: debezium (= 2.2.0-1.4.0) but 2.2.0-1.5.0rc1 is to be installed
+
+ x=yb-voyager
+ y=debezium
+ z=2.2.0-1.4.0)
+
+apt-cache policy yb-voyager
+
+The following packages have unmet dependencies:
+ yb-voyager : Depends: oracle-instantclient-tools (= 21.5.0.0.0-1) but it is not installable
+----
+
+sudo apt install yb-voyager=1.4.0-0
+site and links 
+# https://packages.ubuntu.com/
+# https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/
+sudo apt-get autoremove
+
 
 apt install --simulate ./downloaded-deb-file.deb
 
@@ -61,16 +107,17 @@ sudo apt update
 sudo apt install <Y>=<Z>
 sudo apt update
 
+
 https://packages.ubuntu.com/
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libcompress-raw-zlib-perl_2.101-1_amd64.deb
-sudo apt-get install ./libcompress-raw-zlib-perl_2.101-1_amd64.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbd-mysql-perl_4.041-2_amd64.deb
+sudo apt install ./libcompress-raw-zlib-perl_2.101-1_amd64.deb
+
+
 sudo apt-get install ./libdbd-mysql-perl_4.041-2_amd64.deb
 
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbd-oracle-perl_1.80-3_amd64.deb
+
 
 sudo apt-get install ./libdbi-perl_1.640-1ubuntu0.3_amd64.deb
 
