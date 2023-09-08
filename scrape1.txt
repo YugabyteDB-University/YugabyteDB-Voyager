@@ -1,206 +1,30 @@
-USER $ROLE
-RUN wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
-RUN sudo apt install ./yb-apt-repo_1.0.0_all.deb
-sudo apt install debezium=2.2.0-1.4.0
-sudo apt yb-apt-repo
-RUN sudo apt-get clean
-RUN sudo apt-get update
-RUN sudo apt-get install -y yb-voyager
+VM1 - (us-east1-b): ssh     ~/.ssh/gcp-dev-vm nikhil@node1
+VM2 (us-east1-b): ssh -i ~/. ssh/gcp-dev-vm nikhil@node2
+                    h
+/bin/yugabyted start --cloud location gcp.us-east.us-east1-b -fault tolerance zone
+/bin/yugabyted start --cloud_location gcp.us-east.us-east1-b -fault_tolerance zone -join 10.151.0.97
 
-----
-# download files
-cd /tmp
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
-sudo apt install --simulate ./yb-apt-repo_1.0.0_all.deb
-sudo apt install --simulate yb-apt-repo
+VM3 (us-east1-c): ssh -i ~/. ssh/gcp-dev-vm nikhil@node3
+VM4 (us-east1-c): ssh -i ~/.ssh/gcp-dev-vm I .khil@node4
 
-sudo apt install ./yb-apt-repo_1.0.0_all.deb
+/bin/yugabyted start --cloud location gcp.us-east.us-east1-c -fault tolerance zone -join 10.151.0.97
+/bin/yugabyted start --cloud_location gcp.us-east.us-east1-c _-fault_tolerance zone -join 10.151.0.97
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbi-perl_1.640-1ubuntu0.3_amd64.deb
+VM5 (us-east1-d): ssh -i ~/.ssh/gcp-dev-vm nikhil@node5
+VM6 (us-east1-d): ssh -i ~/.ssh/gcp-dev-vm nikhil@node6
 
-apt install --simulate ./libdbi-perl_1.640-1ubuntu0.3_amd64.deb
+/bin/yugabyted start -cloud location gcp.us-east.us-east1-d -fault_tolerance zone -join 10.151.0.97
+/bin/yugabyted start -cloud location gcp.us-east.us-east1-d - -fault tolerance zone -join 10.151.0.97
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbd-mysql-perl_4.041-2_amd64.deb
+/bin/yugabyted configure data_placement -fault tolerance=zone
 
-apt install --simulate ./libdbd-mysql-perl_4.041-2_amd64.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libcompress-raw-zlib-perl_2.101-1_amd64.deb
+WM7 (us-east1-d): ssh -i ~/. ssh/gcp-dev-vm nikhil@node7
+/bin/yugabyted start -cloud location gcp.us-east.us-east1-d -fault_tolerance zone --join 10.151.0.97
 
-apt install --simulate ./libcompress-raw-zlib-perl_2.101-1_amd64.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/libdbd-oracle-perl_1.80-3_amd64.deb
 
-apt install --simulate ./libdbd-oracle-perl_1.80-3_amd64.deb
 
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/debezium_2.2.0-1.4.0_all.deb
-
-apt install --simulate ./debezium_2.2.0-1.4.0_all.deb
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/ora2pg_23.2-yb.2_all.deb
-
-apt install --simulate ./ora2pg_23.2-yb.2_all.deb
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-basic_21.5.0.0.0-1_amd64.deb
-
-apt install --simulate ./oracle-instantclient-basic_21.5.0.0.0-1_amd64.deb
-
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-devel_21.5.0.0.0-1_amd64.deb
-
-apt install --simulate ./oracle-instantclient-devel_21.5.0.0.0-1_amd64.deb
-
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-jdbc_21.5.0.0.0-1_amd64.deb
-
-apt install --simulate ./oracle-instantclient-jdbc_21.5.0.0.0-1_amd64.deb
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/oracle-instantclient-sqlplus_21.5.0.0.0-1_amd64.deb
-
-apt install --simulate ./oracle-instantclient-sqlplus_21.5.0.0.0-1_amd64.deb
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/yb-voyager_1.4.0-0_amd64.deb
-
-apt install --simulate ./yb-voyager_1.4.0-0_amd64.deb
-
-wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/apt/pool/main/yb-voyager_1.5.0-rc1_amd64.deb
-apt install --simulate ./yb-voyager_1.5.0-rc1_amd64.deb
-
----
-The following packages have unmet dependencies:
- nginx-module-brotli : Depends: nginx (= 1.17.3-2-ppa7~bionic)
-E: Unable to correct problems, you have held broken packages.
-
-X=nginx-module-brotli
-Y=nginx
-Z=1.17.3-2-ppa7~bionic
-
-apt-cache policy nginx
-
-sudo apt update
-sudo apt install <Y>=<Z>
-----
-The following packages have unmet dependencies:
- yb-voyager : Depends: debezium (= 2.2.0-1.4.0) but 2.2.0-1.5.0rc1 is to be installed
-
- x=yb-voyager
- y=debezium
- z=2.2.0-1.4.0)
-
-apt-cache policy yb-voyager
-
-The following packages have unmet dependencies:
- yb-voyager : Depends: oracle-instantclient-tools (= 21.5.0.0.0-1) but it is not installable
-----
-
-sudo apt install yb-voyager=1.4.0-0
-site and links 
-# https://packages.ubuntu.com/
-# https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/
-sudo apt-get autoremove
-
-
-apt install --simulate ./downloaded-deb-file.deb
-
-apt-cache policy 
-sudo apt update
-sudo apt install <Y>=<Z>
-sudo apt update
-
-
-https://packages.ubuntu.com/
-
-
-sudo apt install ./libcompress-raw-zlib-perl_2.101-1_amd64.deb
-
-
-sudo apt-get install ./libdbd-mysql-perl_4.041-2_amd64.deb
-
-
-
-
-sudo apt-get install ./libdbi-perl_1.640-1ubuntu0.3_amd64.deb
-
-sudo apt install libdbi-perl
-sudo apt-mark showhold
-sudo apt-get -f do-release-upgrade
-sudo dpkg -i /tmp/libdbi-perl_1.640-1ubuntu0.3_amd64.deb
-
-sudo apt-get install ./ora2pg_23.2-yb.2_all.deb
-sudo dpkg -i ora2pg_23.2-yb.2_all.deb
-sudo apt-get install -f
-
-sudo dpkg -i debezium_2.2.0-1.4.0_all.deb
-sudo apt-get install -f
-
-sudo dpkg -i oracle-instantclient-basic_21.5.0.0.0-1_amd64.deb
-sudo apt-get install -f
-
-sudo dpkg -i oracle-instantclient-devel_21.5.0.0.0-1_amd64.deb
-sudo apt-get install -f
-
-sudo dpkg -i oracle-instantclient-jdbc_21.5.0.0.0-1_amd64.deb
-sudo apt-get install -f
-
-sudo dpkg -i oracle-instantclient-sqlplus_21.5.0.0.0-1_amd64.deb
-sudo apt-get install -f
-
-sudo dpkg -i yb-voyager_1.4.0-0_amd64.deb
-sudo apt-get install  yb-voyager_1.4.0-0_amd64.deb
-
-sudo apt-get install -y yb-voyager
-
-
-
-
-
-apt-utils 
-    https://download.oracle.com/otn_software/linux/instantclient/2111000/oracle-instantclient-basiclite-21.11.0.0.0-1.el8.x86_64.rpm
-    
-    allhands demo_
-        VM1 - (us-east1-b): ssh     ~/.ssh/gcp-dev-vm nikhil@node1
-        VM2 (us-east1-b): ssh -i ~/. ssh/gcp-dev-vm nikhil@node2
-                      h
-        -/bin/yugabyted start --cloud location gcp.us-east.us-east1-b -fault tolerance zone
-       •/bin/yugabyted start --cloud_location gcp.us-east.us-east1-b -fault_tolerance zone -join 10.151.0.97
-
-
-
-        VM3 (us-east1-c): ssh -i ~/. ssh/gcp-dev-vm nikhil@node3
-        VM4 (us-east1-c): ssh -i ~/.ssh/gcp-dev-vm I .khil@node4
-
-       _-/bin/yugabyted start --cloud location gcp.us-east.us-east1-c -fault tolerance zone -join 10.151.0.97
-       •/bin/yugabyted start --cloud_location gcp.us-east.us-east1-c _-fault_tolerance zone -join 10.151.0.97
-
-
-                                                                                                                                                                                                                                              k
-        VM5 (us-east1-d): ssh -i ~/.ssh/gcp-dev-vm nikhil@node5
-        VM6 (us-east1-d): ssh -i ~/.ssh/gcp-dev-vm nikhil@node6
-
-       •/bin/yugabyted start -cloud location gcp.us-east.us-east1-d -fault_tolerance zone -join 10.151.0.97
-       • /bin/yugabyted start -cloud location gcp.us-east.us-east1-d - -fault tolerance zone -join 10.151.0.97
-
-     •/bin/yugabyted configure data_placement -fault tolerance=zone
-
-
-        VM7 (us-east1-d): ssh -i ~/. ssh/gcp-dev-vm nikhil@node7
-
-        RR
-
-        •/bin/yugabyted start -cloud location gcp.us-east.us-east1-d -fault_tolerance zone --join 10.151.0.97
-
-
-
-
-         -follower_unavailable_considered_failed_sec
-        --leader_lease_duration_ ms
-
-
-      http://10.151.0.97:7000/api/v1/health-check
-
-     http://10.151.0.32:15433/
-      http://10.151.0.102:15433
-  43
-  44
-45 ENDPOINTS="10.151.0.97:9042.10.151.0.102:9042.10.151.0.137:9042.10.151.0.32:9042.10.151.0.81:9042.10.151.0.86:9042"
-24 lines, 1038 characters selected                                                                                                                                                                                                                              Plain Text
+-follower_unavailable_considered_failed_sec
+--leader_lease_duration_ ms
