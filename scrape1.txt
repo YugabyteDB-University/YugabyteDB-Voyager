@@ -31,3 +31,49 @@ WM7 (us-east1-d): ssh -i ~/. ssh/gcp-dev-vm nikhil@node7
 
 NodeJS App
 https://github.com/mayafrog/crud
+
+
+
+
+```
+GROUP_CONCAT(
+  DISTINCT CONCAT(c.name, ': ', (
+     SELECT GROUP_CONCAT(f.title ORDER BY f.title SEPARATOR ', ')
+     FROM sakila.film f INNER JOIN sakila.film_category fc
+       ON f.film_id = fc.film_id
+       INNER JOIN sakila.film_actor fa
+       ON f.film_id = fa.film_id
+     WHERE fc.category_id = c.category_id AND fa.actor_id = a.actor_id
+    )
+ ) ORDER BY c.name SEPARATOR '; ')
+ ```
+
+
+ ```
+array_to_string(
+  array_agg(
+    distinct concat( c.name, ': ', (
+      select array_to_string( array_agg(f.title ORDER BY f.title ASC), ', ') 
+      FROM (
+        (film f JOIN film_category fc 
+        on (f.film_id = fc.film_id) ) 
+        JOIN film_actor fa 
+        on (f.film_id = fa.film_id)
+        )
+      where (
+        (fc.category_id = c.category_id) and (fa.actor_id = a.actor_id)
+        )
+      )
+    ) ORDER BY c.name ASC), '; ') AS film_info 
+    
+```
+
+
+PostgreSQL group_concat function is unavailable, but we have used the same function as array_agg and array_to_string to work the same as the group_concat function in PostgreSQL. There is no function available in PostgreSQL of group_concat, but we have used array_agg and array_to_string to work the same as group_concat, which function is available in MySQL. The Array_agg function in PostgreSQL will return the elements of a group of arrays, and the array_to_string function will concatenate all the array values using the separator used in the query.
+
+https://www.educba.com/postgresql-group-concat/
+
+
+error: ERROR: in an aggregate with DISTINCT, ORDER BY expressions must appear in argument list (SQLSTATE 42P10)
+See :
+https://www.postgresql.org/message-id/CALZg0g5XLwoqFXsiC05SBiaCZhcB1QXDairtz%2BHexf-NSCXPTw%40mail.gmail.com
