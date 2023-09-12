@@ -38,7 +38,7 @@ Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefi
 
 ## Presentation from DSS
 You will find the presentation as a PDF in this repository:
-- `[DSS 2023] Migrate from MySQL to Highly Available PostgreSQL.pdf``
+- `[DSS 2023] Migrate from MySQL to Highly Available PostgreSQL.pdf`
 
 
 ### FAQS
