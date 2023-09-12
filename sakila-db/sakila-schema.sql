@@ -440,15 +440,14 @@ ORDER BY total_sales DESC;
 
 --
 -- View structure for view `actor_info`
---
+-- COMMENT AFTER THIS?
 
 CREATE DEFINER=CURRENT_USER SQL SECURITY INVOKER VIEW actor_info
 AS
 SELECT
 a.actor_id,
 a.first_name,
-a.last_name
--- ,GROUP_CONCAT(DISTINCT CONCAT(c.name, ': ',
+a.last_name ,GROUP_CONCAT(DISTINCT CONCAT(c.name, ': ',
 		(SELECT GROUP_CONCAT(f.title ORDER BY f.title SEPARATOR ', ')
                     FROM sakila.film f
                     INNER JOIN sakila.film_category fc
