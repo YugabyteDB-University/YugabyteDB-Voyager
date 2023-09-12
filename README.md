@@ -7,11 +7,12 @@
 > Registration is free  [Distributed SQL Summit](bit.ly/45U3TvK).
 >
 
+---
 
 # YugabyteDB-Voyager
 
 `https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager`
----
+
 
 To start the Gitpod environment, which is also free to use, select the link below. All you need is a Github account.
 
@@ -29,11 +30,15 @@ Using Gitpod, you can run the notebook files in an on-demand VS Code, browser ba
 ## New to Github and Gitpod? Here's how to start...
 
 - First, create a Github account. It's free. [https://github.com/join](https://github.com/join)
-Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefix -  gitpod.io/# - and entire URL for the repository. For example, `gitpod.io/#https://github.com/gitpod-io/website``
+Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefix -  gitpod.io/# - and entire URL for the repository. For example, `gitpod.io/#https://github.com/gitpod-io/website`
 - Optionally, to make this a seamless one click installation, install the Gitpod browser extension. To learn more about the extension, see [https://www.gitpod.io/docs/browser-extension](https://www.gitpod.io/docs/browser-extension)
 - You will need to authorize Gitpod to use your GitHub account. Select Authorize gitpod.io.
 - Select your default editor, VS Code Browser. Select Continue.
 - Depending on the image configuration, it may take a few minutes for the image to build and to deploy to workspace.
+
+## Presentation from DSS
+You will find the presentation as a PDF in this repository:
+- `[DSS 2023] Migrate from MySQL to Highly Available PostgreSQL.pdf``
 
 
 ### FAQS
