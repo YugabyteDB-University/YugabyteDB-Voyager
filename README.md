@@ -64,3 +64,10 @@ You will find the presentation as a PDF in this repository:
 
 **Where can I find help and support?**
 - You can ask questions in the discussion forum for this lab in the course player at Yugabyte University. Enroll for **FREE** at [Yugabyte University](https://university.yugabyte.com/).
+
+
+---
+## Release notes
+- 20230912
+  - Initial release for Distributed SQL session
+  - Voyager 1.4 and YugabyteDB 2.19.0.0
