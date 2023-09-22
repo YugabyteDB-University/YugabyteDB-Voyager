@@ -70,7 +70,18 @@ You will find the presentation as a PDF in this repository:
 ## Release notes
 - 20230922
   - Update to Voyager 1.5 and Yugabyte 2.19.2.0
+  - update notebooks for new voyager log paths
+  - address issue with `actor_info` view
 - 
 - 20230912
   - Initial release for Distributed SQL session
   - Voyager 1.4 and YugabyteDB 2.19.0.0
+
+https://www.linkedin.com/search/results/content/?keywords=%22Yugabyte%20University%22%20AND%20(badge%20OR%20certificate)&origin=GLOBAL_SEARCH_HEADER&sid=*xn
+
+Credential ID 81289057
+https://www.credential.net/d4390c1c-6fcf-4565-983a-84cdb2925a51#gs.
+
+https://www.google.com/search?as_q=%22Yugabyte%22&as_epq=%22Mohsin+Ali%22&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=linkedin.com&as_occt=any&as_filetype=&tbs=
+
+https://www.linkedin.com/search/results/content/?keywords=%22Credential%AND%2081289057&origin=GLOBAL_SEARCH_HEADER&sid=*xn
