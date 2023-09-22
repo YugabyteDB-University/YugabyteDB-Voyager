@@ -1,7 +1,7 @@
 FROM gitpod/workspace-mysql
 
-ARG YB_VERSION=2.19.0.0
-ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.0.0/yugabyte-2.19.0.0-b190-linux-x86_64.tar.gz
+ARG YB_VERSION=2.19.2.0
+ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
 ARG YB_PATH=/home/gitpod/yugabyte
 ARG YB_PATH_DATA=/home/gitpod/yugabyte-data
 
@@ -24,9 +24,9 @@ RUN wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpm
 RUN sudo apt install ./yb-apt-repo_1.0.0_all.deb
 RUN sudo apt clean
 RUN sudo apt update
-RUN sudo apt install -y debezium=2.2.0-1.4.0
-RUN sudo apt install -y yb-voyager=1.4.0-0
-
+# RUN sudo apt install -y debezium=2.2.0-1.4.0
+# RUN sudo apt install -y yb-voyager=1.4.0-0
+RUN sudo apt install -y yb-voyager
 
 ENV MYSQL_PORT=3306
 ENV YSQL_PORT=5433

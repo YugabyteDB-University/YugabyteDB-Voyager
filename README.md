@@ -68,6 +68,9 @@ You will find the presentation as a PDF in this repository:
 
 ---
 ## Release notes
+- 20230922
+  - Update to Voyager 1.5 and Yugabyte 2.19.2.0
+- 
 - 20230912
   - Initial release for Distributed SQL session
   - Voyager 1.4 and YugabyteDB 2.19.0.0
