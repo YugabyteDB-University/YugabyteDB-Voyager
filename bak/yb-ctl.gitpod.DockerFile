@@ -3,16 +3,12 @@ FROM gitpod/workspace-mysql
 ARG YB_VERSION=2.19.2.0
 ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
 ARG YB_PATH=/home/gitpod/yugabyte
-ARG YUGABYTED_PATH=/home/gitpod/var
-ARG YB_PATH_DATA=/home/gitpod/var
+ARG YB_PATH_DATA=/home/gitpod/yugabyte-data
 
 ARG ROLE=gitpod
-
 USER root
-RUN mkdir -p $YB_PATH  \
-    && mkdir -p $YUGABYTED_PATH
-RUN chown -R $ROLE:$ROLE $YB_PATH \
-    && chown -R $ROLE:$ROLE $YUGABYTED_PATH
+RUN mkdir -p $YB_PATH 
+RUN chown -R $ROLE:$ROLE $YB_PATH 
 
 USER $ROLE
 RUN curl -sSLo ./yugabyte.tar.gz $YB_DOWNLOAD_URL  \
@@ -28,27 +24,18 @@ RUN wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpm
 RUN sudo apt install ./yb-apt-repo_1.0.0_all.deb
 RUN sudo apt clean
 RUN sudo apt update
+# RUN sudo apt install -y debezium=2.2.0-1.4.0
+# RUN sudo apt install -y yb-voyager=1.4.0-0
 RUN sudo apt install -y yb-voyager
 
-
-# change this per repo
-ENV MY_GITPOD_REPO=ybu-gitpod
-ENV N1=1
-ENV N2=2
-ENV N3=3
-ENV BETA_FAST_DATA_EXPORT=1
-ENV YB_PATH=/home/gitpod/yugabyte
-ENV YB_PATH_DATA=/home/gitpod/var
-ENV YUGABYTED_PATH=/home/gitpod/var
-ENV MASTER_WEB_PORT=7000
 ENV MYSQL_PORT=3306
-ENV TSERVER_WEB_PORT=8200
-ENV WEB_PORT=7000
-ENV YCQL_API_PORT=12000
-ENV YCQL_PORT=9042
-ENV YSQL_API_PORT=13000
 ENV YSQL_PORT=5433
-ENV YUGABYTED_WEB_UI_PORT=15433
+ENV YCQL_PORT=9042
+ENV WEB_PORT=7000
+ENV TSERVER_WEB_PORT=8200
+ENV YCQL_API_PORT=12000
+ENV YSQL_API_PORT=13000
+ENV BETA_FAST_DATA_EXPORT=1
 
 
-EXPOSE ${MASTER_WEB_PORT} ${MYSQL_PORT} ${TSERVER_WEB_PORT} ${WEB_PORT} ${YCQL_API_PORT} ${YCQL_PORT} ${YSQL_API_PORT} ${YSQL_PORT} ${YUGABYTED_WEB_UI_PORT}
+EXPOSE ${MYSQL_PORT} ${YSQL_PORT} ${YCQL_PORT} ${WEB_PORT} ${TSERVER_WEB_PORT} ${YSQL_API_PORT} ${YCQL_API_PORT} 
