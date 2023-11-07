@@ -18,23 +18,22 @@ To start the Gitpod environment, which is also free to use, select the link belo
 
 [![](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager)
 
-Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket workspace. It's super easy to use, offers 50 hours of free use per month, and only requires a chromium based browser.
+Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket workspace. It's super easy to use, offers 50 hours of free use per month, and only requires a chromium-based browser.
 
-Using Gitpod, you can run the notebook files in an on-demand VS Code, browser based environment. 😎
+Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment. 😎
 
-This repository contains the notebook files for YSQL Development, a free course that is soon-to-be available at [university.yugabyte.com](https://university.yugabyte.com).
+This repository contains the notebook files for `Migrate to modernize with YugabyteDB Voyager`, a free course that is soon to be available at [university.yugabyte.com](https://university.yugabyte.com).
 
-Using Gitpod, you can run the notebook files in an on-demand VS Code, browser based environment.
+Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment.
 
 
 ## New to Github and Gitpod? Here's how to start...
 
-- First, create a Github account. It's free. [https://github.com/join](https://github.com/join)
-Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefix -  gitpod.io/# - and entire URL for the repository. For example, `gitpod.io/#https://github.com/gitpod-io/website`
-- Optionally, to make this a seamless one click installation, install the Gitpod browser extension. To learn more about the extension, see [https://www.gitpod.io/docs/browser-extension](https://www.gitpod.io/docs/browser-extension)
+- First, create a Github account. It's free at [https://github.com/join](https://github.com/join). Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefix -  gitpod.io/# - and the entire URL for the repository. For example, `gitpod.io/#https://github.com/gitpod-io/website`.
+- Optionally, to make this a seamless one click installation, install the Gitpod browser extension. To learn more about the extension, see [https://www.gitpod.io/docs/browser-extension](https://www.gitpod.io/docs/browser-extension).
 - You will need to authorize Gitpod to use your GitHub account. Select Authorize gitpod.io.
 - Select your default editor, VS Code Browser. Select Continue.
-- Depending on the image configuration, it may take a few minutes for the image to build and to deploy to workspace.
+- Depending on the image configuration, it may take a few minutes for the image to build and deploy to the Gitpod workspace.
 
 ## Presentation from DSS
 You will find the presentation as a PDF in this repository:
@@ -57,7 +56,7 @@ You will find the presentation as a PDF in this repository:
 - To install the Gitpod browser extension, check out [https://www.gitpod.io/docs/quickstart#installing-the-gitpod-browser-extension](https://www.gitpod.io/docs/quickstart#installing-the-gitpod-browser-extension).
 
 **How do I start?**
-- Simply select this link: [https://gitpod.io/#https://github.com/YugabyteDB-University//YugabyteDB-Voyager][https://gitpod.io/#https://github.com/YugabyteDB-University/YSQL-Development](https://gitpod.io/#https://github.com/YugabyteDB-University/)
+- Simply select this link: [https://gitpod.io/#https://github.com/YugabyteDB-University//YugabyteDB-Voyager](https://gitpod.io/#https://github.com/YugabyteDB-University/YSQL-Development](https://gitpod.io/#https://github.com/YugabyteDB-University/)
 
 **Why does it take 5 minutes to start up?**
 - Gitpod builds a docker image for VS Code, related extensions, and YugabyteDB. This takes a few minutes. However, after your image is created, subsequent launches will be much faster.
@@ -71,7 +70,7 @@ You will find the presentation as a PDF in this repository:
 - 20230922
   - Update to Voyager 1.5 and Yugabyte 2.19.2.0
   - update notebooks for new voyager log paths
-  - address issue with `actor_info` view
+  - address issues with `actor_info` view
 - 
 - 20230912
   - Initial release for Distributed SQL session
