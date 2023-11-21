@@ -1,12 +1,15 @@
 FROM gitpod/workspace-mysql
 
+ARG YB_VERSION=2.19.2.0
+ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
 # ARG YB_VERSION=2.20.0.0
 # ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.20.0.0/yugabyte-2.20.0.0-b76-linux-x86_64.tar.gz
-ARG YB_VERSION=2.19.3.0
-ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.3.0/yugabyte-2.19.3.0-b140-linux-x86_64.tar.gz
+# ARG YB_VERSION=2.19.3.0
+# ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.3.0/yugabyte-2.19.3.0-b140-linux-x86_64.tar.gz
 ARG YB_PATH=/home/gitpod/yugabyte
 ARG YUGABYTED_PATH=/home/gitpod/var
 ARG YB_PATH_DATA=/home/gitpod/var
+
 ARG ROLE=gitpod
 
 USER root
@@ -21,7 +24,7 @@ RUN curl -sSLo ./yugabyte.tar.gz $YB_DOWNLOAD_URL  \
   && chmod +x $YB_PATH/bin/* \
   && rm ./yugabyte.tar.gz
 RUN $YB_PATH/bin/post_install.sh
-RUN echo "\n# yugabyted executable path" >> ~/.bashrc
+RUN echo "\n# yugabytedb executable path" >> ~/.bashrc
 RUN echo "export PATH=\$PATH:$YB_PATH/bin/" >> ~/.bashrc
 
 USER $ROLE
