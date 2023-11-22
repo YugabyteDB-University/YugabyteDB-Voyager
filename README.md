@@ -1,15 +1,13 @@
-<div style="width:100%; background-color: #000041"><a target="_blank" href="bit.ly/45U3TvK"><img src="assets/YugabyteDB_DSS-Virtual_LinkedIn-Cover_1584x396.jpg" /></a></div>
+<div style="width:100%; background-color: #000041"><a target="_blank" href="http://university.yugabyte.com"><img src="assets/YBU_Logo.png" /></a></div><br>
 
-<br>
-
-> **Migrate from MySQL to Distributed, Highly Available PostgreSQL!**
+> **Migrate and Modernize with YugabyteDB Voyager**
 >
-> Registration is free  [Distributed SQL Summit](bit.ly/45U3TvK).
+> Enroll for free at  [Yugabyte University](https://university.yugabyte.com/courses/YugabyteDB-Voyager).
 >
 
 ---
 
-# YugabyteDB-Voyager
+# YugabyteDB Voyager
 
 `https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager`
 
@@ -34,10 +32,6 @@ Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-ba
 - You will need to authorize Gitpod to use your GitHub account. Select Authorize gitpod.io.
 - Select your default editor, VS Code Browser. Select Continue.
 - Depending on the image configuration, it may take a few minutes for the image to build and deploy to the Gitpod workspace.
-
-## Presentation from DSS
-You will find the presentation as a PDF in this repository:
-- `[DSS 2023] Migrate from MySQL to Highly Available PostgreSQL.pdf`
 
 
 ### FAQS
@@ -67,11 +61,18 @@ You will find the presentation as a PDF in this repository:
 
 ---
 ## Release notes
+- 20231122
+  - Update notebooks for university.yugabyte.com course
+  - Add post-import-data step
+  - Update README.md
+  
+
 - 20230922
   - Update to Voyager 1.5 and Yugabyte 2.19.2.0
-  - update notebooks for new voyager log paths
-  - address issues with `actor_info` view
-- 
+  - Update notebooks for new voyager log paths
+  - Address issues with `actor_info` view
+  
+
 - 20230912
   - Initial release for Distributed SQL session
   - Voyager 1.4 and YugabyteDB 2.19.0.0
