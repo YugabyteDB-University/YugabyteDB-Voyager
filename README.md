@@ -20,7 +20,7 @@ Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket wor
 
 Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment. 😎
 
-This repository contains the notebook files for `Migrate to modernize with YugabyteDB Voyager`, a free course that is soon to be available at [university.yugabyte.com](https://university.yugabyte.com).
+This repository contains the notebook files for `Migrate to modernize with YugabyteDB Voyager`, a free course that is soon to be available at [Yugabyte University](https://university.yugabyte.com/courses/YugabyteDB-Voyager).
 
 Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment.
 
@@ -50,13 +50,13 @@ Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-ba
 - To install the Gitpod browser extension, check out [https://www.gitpod.io/docs/quickstart#installing-the-gitpod-browser-extension](https://www.gitpod.io/docs/quickstart#installing-the-gitpod-browser-extension).
 
 **How do I start?**
-- Simply select this link: [https://gitpod.io/#https://github.com/YugabyteDB-University//YugabyteDB-Voyager](https://gitpod.io/#https://github.com/YugabyteDB-University/YSQL-Development](https://gitpod.io/#https://github.com/YugabyteDB-University/)
+- Simply select this link: [https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager](https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager)
 
 **Why does it take 5 minutes to start up?**
 - Gitpod builds a docker image for VS Code, related extensions, and YugabyteDB. This takes a few minutes. However, after your image is created, subsequent launches will be much faster.
 
 **Where can I find help and support?**
-- You can ask questions in the discussion forum for this lab in the course player at Yugabyte University. Enroll for **FREE** at [Yugabyte University](https://university.yugabyte.com/).
+- You can ask questions in the discussion forum for this lab in the course player at Yugabyte University. Enroll for **FREE** at  [Yugabyte University](https://university.yugabyte.com/courses/YugabyteDB-Voyager).
 
 
 ---
