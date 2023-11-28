@@ -20,7 +20,7 @@ Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket wor
 
 Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment. 😎
 
-This repository contains the notebook files for `Migrate to modernize with YugabyteDB Voyager`, a free course that is soon to be available at [Yugabyte University](https://university.yugabyte.com/courses/YugabyteDB-Voyager).
+This repository contains the notebook files for `Migrate to modernize with YugabyteDB Voyager`, a free course that is available at [Yugabyte University](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager).
 
 Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment.
 
