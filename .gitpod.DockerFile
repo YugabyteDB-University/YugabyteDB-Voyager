@@ -36,7 +36,7 @@ RUN sudo apt install -y yb-voyager
 
 
 # change this per repo
-ENV MY_GITPOD_REPO=ybu-gitpod
+ENV MY_GITPOD_REPO=YugabyteDB-Voyager
 ENV N1=1
 ENV N2=2
 ENV N3=3
