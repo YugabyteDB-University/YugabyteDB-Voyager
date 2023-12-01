@@ -62,7 +62,7 @@ Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-ba
 ---
 ## Release notes
 - 20231130
-  - Update for Voyager 1.6 and YugabyteDB 2.19.3.0
+  - Update for Voyager 1.6
   - Update notebooks for end migration and new boolean flags
 
 - 20231122

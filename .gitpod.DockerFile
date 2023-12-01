@@ -1,10 +1,9 @@
 FROM gitpod/workspace-mysql
 
-# ARG YB_VERSION=2.19.2.0
-# ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
-ARG YB_VERSION=2.19.3.0
-ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.3.0/yugabyte-2.19.3.0-b140-linux-x86_64.tar.gz
-
+ARG YB_VERSION=2.19.2.0
+ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
+# ARG YB_VERSION=2.19.3.0
+# ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.3.0/yugabyte-2.19.3.0-b140-linux-x86_64.tar.gz
 # ARG YB_VERSION=2.20.0.0
 # ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.20.0.0/yugabyte-2.20.0.0-b76-linux-x86_64.tar.gz
 
