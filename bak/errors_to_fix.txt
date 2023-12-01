@@ -1,0 +1,107 @@
+gitpod /workspace/YugabyteDB-Voyager (main) $ yugabyted status
+/home/gitpod/yugabyte/bin/yugabyted:96: SyntaxWarning: invalid escape sequence '\.'
+  '127\.0\.0\.2',
+/home/gitpod/yugabyte/bin/yugabyted:97: SyntaxWarning: invalid escape sequence '\.'
+  '127\.0\.0\.3',
+/home/gitpod/yugabyte/bin/yugabyted:98: SyntaxWarning: invalid escape sequence '\.'
+  '127\.0\.0\.4',
+/home/gitpod/yugabyte/bin/yugabyted:99: SyntaxWarning: invalid escape sequence '\.'
+  '127\.0\.0\.5',
+/home/gitpod/yugabyte/bin/yugabyted:100: SyntaxWarning: invalid escape sequence '\.'
+  '127\.0\.0\.6',
+/home/gitpod/yugabyte/bin/yugabyted:101: SyntaxWarning: invalid escape sequence '\.'
+  '127\.0\.0\.7'
+/home/gitpod/yugabyte/bin/yugabyted:1315: SyntaxWarning: invalid escape sequence '\['
+  thp_mode = re.search("\[(.*)\]", thp_enabled).group(1)
+/home/gitpod/yugabyte/bin/yugabyted:2374: SyntaxWarning: invalid escape sequence '\d'
+  list_tables_cmd = [find_binary_location("ysqlsh"), "-d", WEBSERVER_DB, "-c", "\d"]
+/home/gitpod/yugabyte/bin/yugabyted:3779: SyntaxWarning: invalid escape sequence '\.'
+  ipv4_regex = "^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.){3}(25[0-5]|2[0-4]"\
+yugabyted is not running.
+gitpod /workspace/YugabyteDB-Voyager (main) $ pidof python
+2902 2463 1603 1259 891
+gitpod /workspace/YugabyteDB-Voyager (main) $ ps --forest -o pid,cmd -g $(ps -o sid= -p 2902)
+    PID CMD
+      1 supervisor init
+     35 supervisor run
+gitpod /workspace/YugabyteDB-Voyager (main) $ ps --forest -o pid,cmd -g $(ps -o sid= -p 2463)
+    PID CMD
+      1 supervisor init
+     35 supervisor run
+gitpod /workspace/YugabyteDB-Voyager (main) $ ps --forest -o pid,cmd -g $(ps -o sid= -p 1603)
+    PID CMD
+   1603 /home/gitpod/.pyenv/versions/3.12.0/bin/python /home/gitpod/yugabyte/bin/yugabyted start --advertise_address=127.0.0.3 --base_dir=/home/gitpod/var/node3 --cloud_location=cloud1
+   1611  \_ /home/gitpod/yugabyte/bin/yb-master --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node3/data --webserver_interface=127.0
+   1738  \_ /home/gitpod/yugabyte/bin/yb-tserver --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node3/data --webserver_interface=127.
+   1881  |   \_ /home/gitpod/yugabyte/postgres/bin/postgres -D /home/gitpod/var/node3/data/pg_data -p 5433 -h 127.0.0.3 -k /tmp/.yb.127.0.0.3:5433 -c unix_socket_permissions=0700 -c lo
+   1845  \_ /home/gitpod/yugabyte/bin/yugabyted-ui -database_host=127.0.0.3 -master_ui_port=7000 -tserver_ui_port=8200 -warnings=ntp/chrony|transparent_hugepages|insecure
+gitpod /workspace/YugabyteDB-Voyager (main) $ ps --forest -o pid,cmd -g $(ps -o sid= -p 1259)
+    PID CMD
+   1259 /home/gitpod/.pyenv/versions/3.12.0/bin/python /home/gitpod/yugabyte/bin/yugabyted start --advertise_address=127.0.0.2 --base_dir=/home/gitpod/var/node2 --cloud_location=cloud1
+   1267  \_ /home/gitpod/yugabyte/bin/yb-master --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node2/data --webserver_interface=127.0
+   1354  \_ /home/gitpod/yugabyte/bin/yb-tserver --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node2/data --webserver_interface=127.
+   1500  |   \_ /home/gitpod/yugabyte/postgres/bin/postgres -D /home/gitpod/var/node2/data/pg_data -p 5433 -h 127.0.0.2 -k /tmp/.yb.127.0.0.2:5433 -c unix_socket_permissions=0700 -c lo
+   1494  \_ /home/gitpod/yugabyte/bin/yugabyted-ui -database_host=127.0.0.2 -master_ui_port=7000 -tserver_ui_port=8200 -warnings=ntp/chrony|transparent_hugepages|insecure
+gitpod /workspace/YugabyteDB-Voyager (main) $ ps --forest -o pid,cmd -g $(ps -o sid= -p 891)
+    PID CMD
+    891 /home/gitpod/.pyenv/versions/3.12.0/bin/python /home/gitpod/yugabyte/bin/yugabyted start --advertise_address=127.0.0.1 --base_dir=/home/gitpod/var/node1 --cloud_location=cloud1
+    899  \_ /home/gitpod/yugabyte/bin/yb-master --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node1/data --webserver_interface=127.0
+    997  \_ /home/gitpod/yugabyte/bin/yb-tserver --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node1/data --webserver_interface=127.
+   1226  |   \_ /home/gitpod/yugabyte/postgres/bin/postgres -D /home/gitpod/var/node1/data/pg_data -p 5433 -h 127.0.0.1 -k /tmp/.yb.127.0.0.1:5433 -c unix_socket_permissions=0700 -c lo
+   1148  \_ /home/gitpod/yugabyte/bin/yugabyted-ui -database_host=127.0.0.1 -master_ui_port=7000 -tserver_ui_port=8200 -warnings=ntp/chrony|transparent_hugepages|insecure
+gitpod /workspace/YugabyteDB-Voyager (main) $ ps --forest -o pid,cmd -g $(ps -o sid= -p 891)
+    PID CMD
+    891 /home/gitpod/.pyenv/versions/3.12.0/bin/python /home/gitpod/yugabyte/bin/yugabyted start --advertise_address=127.0.0.1 --base_dir=/home/gitpod/var/node1 --cloud_location=cloud1.region1.zone1 --fault_tolerance=zone --mas
+    899  \_ /home/gitpod/yugabyte/bin/yb-master --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node1/data --webserver_interface=127.0.0.1 --metrics_snapshotter_tserver_metrics_
+    997  \_ /home/gitpod/yugabyte/bin/yb-tserver --stop_on_parent_termination --undefok=stop_on_parent_termination --fs_data_dirs=/home/gitpod/var/node1/data --webserver_interface=127.0.0.1 --metrics_snapshotter_tserver_metrics
+   1226  |   \_ /home/gitpod/yugabyte/postgres/bin/postgres -D /home/gitpod/var/node1/data/pg_data -p 5433 -h 127.0.0.1 -k /tmp/.yb.127.0.0.1:5433 -c unix_socket_permissions=0700 -c logging_collector=on -c log_directory=/home/g
+   1148  \_ /home/gitpod/yugabyte/bin/yugabyted-ui -database_host=127.0.0.1 -master_ui_port=7000 -tserver_ui_port=8200 -warnings=ntp/chrony|transparent_hugepages|insecure
+gitpod /workspace/YugabyteDB-Voyager (main) $ ps --forest -o pid,cmd -g $(ps -o sid= -p 891) | grep yugabyted.conf
+gitpod /workspace/YugabyteDB-Voyager (main) $ cd /var/conf/
+bash: cd: /var/conf/: No such file or directory
+gitpod /workspace/YugabyteDB-Voyager (main) $ pwd
+/workspace/YugabyteDB-Voyager
+gitpod /workspace/YugabyteDB-Voyager (main) $ cd /home/gitpod/
+gitpod ~ $ cd var/conf/
+gitpod ~/var/conf $ ls -l
+total 4
+-rw-r--r-- 1 gitpod gitpod 1253 Dec  1 17:34 yugabyted.conf
+gitpod ~/var/conf $ cat yugabyted.conf 
+{
+    "data_dir": "/home/gitpod/var/data",
+    "log_dir": "/home/gitpod/var/logs",
+    "gen_certs_dir": "/home/gitpod/var/generated_certs",
+    "master_rpc_port": 7100,
+    "tserver_rpc_port": 9100,
+    "master_webserver_port": 7000,
+    "tserver_webserver_port": 9000,
+    "ysql_port": 5433,
+    "ycql_port": 9042,
+    "advertise_address": "",
+    "webserver_port": 7200,
+    "yugabyted_ui_port": 15433,
+    "universe_uuid": "25135f9f-29db-4fdb-953e-6346621b42e8",
+    "node_uuid": "f59ecd84-4bb3-41f7-bfd4-a023d7406a96",
+    "tserver_uuid": "759391ad2b3049ffbdfbdcac439f9a8c",
+    "master_uuid": "5d35fa63d4a844c1b334bc9a6b8b4a10",
+    "placement_uuid": "2a7808a7-1d80-46f4-b0b2-e7a078df25bc",
+    "polling_interval": "5",
+    "callhome": true,
+    "master_flags": "",
+    "tserver_flags": "",
+    "join": "",
+    "ysql_enable_auth": false,
+    "use_cassandra_authentication": false,
+    "cloud_provider": "cloud1",
+    "cloud_region": "datacenter1",
+    "cloud_zone": "rack1",
+    "fault_tolerance": "none",
+    "secure": false,
+    "insecure": true,
+    "certs_dir": "/home/gitpod/var/certs",
+    "ca_cert_file_path": "",
+    "database_password": null,
+    "current_masters": "",
+    "ui": true,
+    "dns_enabled": false,
+    "read_replica": false
