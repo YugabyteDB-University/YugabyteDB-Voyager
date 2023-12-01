@@ -43,6 +43,7 @@ tasks:
         --master_webserver_port=7000  \
         --tserver_flags="yb_num_shards_per_tserver=1,ysql_num_shards_per_tserver=1,ysql_beta_features=true,ysql_enable_packed_row=false"  \
         --tserver_webserver_port=8200
+        configure data placement
         gp open 01_Lab_Setup.ipynb
 
 ports:

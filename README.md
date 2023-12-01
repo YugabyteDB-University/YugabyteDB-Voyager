@@ -61,6 +61,10 @@ Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-ba
 
 ---
 ## Release notes
+- 20231130
+  - Update for Voyager 1.6 and YugabyteDB 2.19.3.0
+  - Update notebooks for end migration and new boolean flags
+
 - 20231122
   - Update notebooks for university.yugabyte.com course
   - Add post-import-data step
@@ -68,7 +72,7 @@ Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-ba
   
 
 - 20230922
-  - Update to Voyager 1.5 and Yugabyte 2.19.2.0
+  - Update to Voyager 1.5 and YugabyteDB 2.19.2.0
   - Update notebooks for new voyager log paths
   - Address issues with `actor_info` view
   
