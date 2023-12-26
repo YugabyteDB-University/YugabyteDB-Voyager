@@ -1,5 +1,5 @@
 #! /bin//bash
-MODE="region"
+MODE="zone"
 
 # Check if an argument is provided
 # 2.19.2 for yugabyted does not support cloud tolerance
