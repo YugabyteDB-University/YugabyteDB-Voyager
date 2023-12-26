@@ -31,7 +31,7 @@ tasks:
       mysql -h 127.0.0.1 -u root < /workspace/YugabyteDB-Voyager/sakila-db/sakila-schema.sql
       mysql -h 127.0.0.1 -u root < /workspace/YugabyteDB-Voyager/sakila-db/sakila-data.sql
       cd ${GITPOD_REPO_ROOT}
-      ./start_all.sh region
+      ./start_all.sh zone
       gp open 01_Lab_Setup.ipynb
 ports:
   - port: 3306
