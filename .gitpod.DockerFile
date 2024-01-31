@@ -1,12 +1,9 @@
 FROM gitpod/workspace-mysql
 
-ARG YB_VERSION=2.19.2.0
-ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
-# ARG YB_VERSION=2.19.3.0
-# ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.3.0/yugabyte-2.19.3.0-b140-linux-x86_64.tar.gz
-# ARG YB_VERSION=2.20.0.0
-# ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.20.0.0/yugabyte-2.20.0.0-b76-linux-x86_64.tar.gz
-
+#ARG YB_VERSION=2.19.2.0
+#ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
+ARG YB_VERSION=2.20.1.3
+ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.20.1.3/yugabyte-2.20.1.3-b3-linux-x86_64.tar.gz
 ARG YB_PATH_BIN=/home/gitpod/yugabyte
 ARG YB_PATH_BASE=/home/gitpod/yugabyte/var
 
@@ -26,18 +23,23 @@ RUN chown -R $ROLE:$ROLE $YB_PATH_BIN  \
     && chown -R $ROLE:$ROLE $YB_PATH_BASE/node2  \
     && chown -R $ROLE:$ROLE $YB_PATH_BASE/node3  
 
+    
 USER $ROLE
 RUN curl -sSLo ./yugabyte.tar.gz $YB_DOWNLOAD_URL  \
   && tar -xvf yugabyte.tar.gz -C $YB_PATH_BIN --strip-components=1 \
   && chmod +x $YB_PATH_BIN/bin/* \
   && rm ./yugabyte.tar.gz
 
+# this is a hard fix for unresolved issue
+RUN sed -i 's/9000/8200/g'  $YB_PATH_BIN/bin/yugabyted
 RUN $YB_PATH_BIN/bin/post_install.sh
+
 
 RUN echo "\n# yugabytedb executable path" >> ~/.bashrc
 RUN echo "export PATH=\$PATH:$YB_PATH_BIN/bin/" >> ~/.bashrc
 
 
+# voygaer
 USER $ROLE
 RUN wget https://s3.us-west-2.amazonaws.com/downloads.yugabyte.com/repos/reporpms/yb-apt-repo_1.0.0_all.deb
 RUN sudo apt install ./yb-apt-repo_1.0.0_all.deb
