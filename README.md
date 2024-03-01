@@ -2,7 +2,7 @@
 
 > **Migrate and Modernize with YugabyteDB Voyager**
 >
-> Enroll for free at  [Yugabyte University](https://university.yugabyte.com/courses/YugabyteDB-Voyager).
+> Enroll for free at [Yugabyte University](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager).
 >
 
 
