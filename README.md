@@ -9,7 +9,7 @@
 ---
 <div style="width:100%; background-color: #000041"><img src="assets/Gitpod_YugabyteDB_Voyager.gif" /></div>
 
-To start the Gitpod environment, which is also free to use, select the link below. All you need is a Github account.
+To start the Gitpod environment, which is also free to use, select the "Open in Gitpod" button below 👇. All you need is a Github account.
 
 
 [![](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager)
