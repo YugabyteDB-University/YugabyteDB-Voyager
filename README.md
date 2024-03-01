@@ -9,14 +9,14 @@
 ---
 <div style="width:100%; background-color: #000041"><img src="assets/Gitpod_YugabyteDB_Voyager.gif" /></div>
 
-To start the Gitpod environment, which is also free to use, select the "Open in Gitpod" button below 👇. All you need is a Github account.
+To start the Gitpod environment, which is also free to use, select the "Open in Gitpod" button below👇. 
 
 
 [![](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager)
 
-Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket workspace. It's super easy to use, offers 50 hours of free use per month, and only requires a chromium-based browser.
+All you need is a Github account to run Gitpod for free. Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket workspace. It's super easy to use, offers 50 hours of free use per month, and only requires a chromium-based browser.
 
-Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment. 😎
+Using Gitpod, you can run the Jupyter notebook files in an on-demand VS Code, browser-based environment. 😎
 
 This repository contains the notebook files for `Migrate to modernize with YugabyteDB Voyager`, a free course that is available at [Yugabyte University](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager?utm_source=gitpod&utm_medium=notebook).
 
