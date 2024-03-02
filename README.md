@@ -18,7 +18,7 @@ All you need is a Github account to run Gitpod for free. Gitpod is an on-demand 
 
 Using Gitpod, you can run the Jupyter notebook files in an on-demand VS Code, browser-based environment. 😎
 
-This repository contains the notebook files for `Migrate to modernize with YugabyteDB Voyager`, a free course that is available at [Yugabyte University](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager?utm_source=gitpod&utm_medium=notebook).
+This repository contains the notebook files for [Migrate and modernize with YugabyteDB Voyager](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager?utm_source=gitpod&utm_medium=notebook), a free course that is available at [Yugabyte University](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager?utm_source=gitpod&utm_medium=notebook).
 
 Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment.
 
