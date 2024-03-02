@@ -16,21 +16,19 @@ To start the Gitpod environment, which is also free to use, select the "Open in 
 
 All you need is a Github account to run Gitpod for free. Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket workspace. It's super easy to use, offers 50 hours of free use per month, and only requires a chromium-based browser.
 
-Using Gitpod, you can run the Jupyter notebook files in an on-demand VS Code, browser-based environment. 😎
+Using Gitpod, you can run the Jupyter notebook files in an on-demand Visual Studio Code, browser-based environment. 😎
 
 This repository contains the notebook files for [Migrate and modernize with YugabyteDB Voyager](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager?utm_source=gitpod&utm_medium=notebook), a free course that is available at [Yugabyte University](https://university.yugabyte.com/courses/migrate-and-modernize-with-yugabytedb-voyager?utm_source=gitpod&utm_medium=notebook).
 
-Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-based environment.
 
-
-## New to Github and Gitpod? Here's how to start...
-
-- First, create a Github account. It's free at [https://github.com/join](https://github.com/join). Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefix -  gitpod.io/# - and the entire URL for the repository. For example, `gitpod.io/#https://github.com/gitpod-io/website`.
-- Optionally, to make this a seamless one click installation, install the Gitpod browser extension. To learn more about the extension, see [https://www.gitpod.io/docs/browser-extension](https://www.gitpod.io/docs/browser-extension).
-- You will need to authorize Gitpod to use your GitHub account. Select Authorize gitpod.io.
-- Select your default editor, VS Code Browser. Select Continue.
+## New to Github and Gitpod? 
+Here's how to start...
+- Create a Github account. It's free at [https://github.com/join](https://github.com/join).
+- Next, in a Chromium browser, open the Gitpod link for the GitHub repository. The link is a prefix  `gitpod.io/#` - and the entire URL for the repository. For example, `gitpod.io/#https://github.com/gitpod-io/website](https://github.com/YugabyteDB-University/YugabyteDB-Voyager`. 
+- Then, authorize Gitpod to use your GitHub account. In the dialog, select **Authorize gitpod.io**.
+- Select your default editor, VS Code Browser. Select **Continue**.
 - Depending on the image configuration, it may take a few minutes for the image to build and deploy to the Gitpod workspace.
-
+- Review the terminal output for additional instructions.
 
 ### FAQS
 
@@ -47,11 +45,11 @@ Using Gitpod, you can run the notebook files in an on-demand VS Code, browser-ba
 - Sign up for a Github.com account.
 - To install the Gitpod browser extension, check out [https://www.gitpod.io/docs/quickstart#installing-the-gitpod-browser-extension](https://www.gitpod.io/docs/quickstart#installing-the-gitpod-browser-extension).
 
-**How do I start?**
+**How do I start Gitpod?**
 - Simply select this link: [https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager](https://gitpod.io/#https://github.com/YugabyteDB-University/YugabyteDB-Voyager)
 
 
-**Why does it take 10 minutes to start up?**
+**Why does it take 5 minutes to start up?**
 - Gitpod builds a docker image for VS Code, related extensions, and YugabyteDB. This takes a few minutes. However, after your image is created, subsequent launches will be much faster.
 
 **OK, it started, BUT the ybu-lab terminal shows errors. What can I do???**
